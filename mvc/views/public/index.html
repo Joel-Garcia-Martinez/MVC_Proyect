@@ -1,0 +1,27 @@
+<h1>web.py y MVC</h1> 
+<p>Pagina index publica</p>
+
+<table>
+    <th>Sensor_1</th>
+    <th>Sensor_2</th>
+    <th>Sensor_3</th>
+    <tr>
+        <td id="aaaa">{{Sensor1}}</td>
+        <td id="aaaa">{{Sensor2}}</td>
+        <td id="aaaa">{{Sensor3}}</td>
+    </tr>
+</table>
+
+<script>
+    window.setInterval(function() {
+        var request = new XMLHttpRequest();
+        request.open("GET","https://awi4jgm-default-rtdb.firebaseio.com/sensores.json");
+        request.onload = () => {
+            const response = request.responseText;
+            console.log(response);
+            const json = JSON.parse(response);
+            document.getElementById("aaaa").innerHTML = json["aaaa"].temperatura; 
+        };
+        request.send();
+    }, 1000);
+</script>
