@@ -1,8 +1,7 @@
-firebase_config.pyrebase
-sensores.py
-import web 
-import pyrebase
-import firebase_config as token
+import web #importa la libreria web.py
+import pyrebase #importa la libreria para el uso de firebase
+import firebase_config as token #configura el reconocimiento de token o id en firebase
+import json #importa el archivo json 
 
 urls =(
     "/", "mvc.controllers.public.index.Index",
