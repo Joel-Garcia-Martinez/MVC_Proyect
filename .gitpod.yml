@@ -1,0 +1,8 @@
+ports:
+  - port: 8080
+    onOpen: open-browser
+tasks:
+  - init: |
+      echo 'TODO: build project'
+    command: |
+      echo 'TODO: start app'
